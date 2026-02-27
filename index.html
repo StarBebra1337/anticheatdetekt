@@ -13,23 +13,36 @@
 
         body {
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-            background: linear-gradient(135deg, #0b0c1e 0%, #1a1f3a 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px;
+            position: relative;
+        }
+
+        /* ===== ПАРТИКЛЫ (анимированный фон) ===== */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0b0c1e 0%, #1a1f3a 100%);
         }
 
         .card {
             max-width: 1000px;
             width: 100%;
-            background: rgba(18, 22, 48, 0.95);
+            background: rgba(18, 22, 48, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 48px;
             padding: 48px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
             color: #eef2ff;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
@@ -181,7 +194,6 @@
             padding-top: 32px;
         }
         
-        /* Стиль для сообщения о загрузке */
         .download-message {
             margin-top: 20px;
             color: #4ade80;
@@ -192,17 +204,17 @@
     </style>
 </head>
 <body>
+    <!-- КОНТЕЙНЕР ДЛЯ ПАРТИКЛОВ (фон) -->
+    <div id="particles-js"></div>
+
     <div class="card">
-        <!-- Заголовок -->
         <h1>🛡️ Anticheat Detect</h1>
         <div class="badge">Актуальная версия · 2.1.4</div>
 
-        <!-- Основное описание (твой текст) -->
         <div class="description">
             <strong>Anticheat Detect</strong> — это программа, которая проверяет компьютер на наличие популярных читов и запрещённых игровых модификаций.
         </div>
 
-        <!-- Сетка с особенностями (можно менять текст) -->
         <div class="feature-grid">
             <div class="feature-item">
                 <div class="feature-icon">🔍</div>
@@ -226,7 +238,6 @@
             </div>
         </div>
 
-        <!-- Важный блок с пояснением про антивирус -->
         <div class="warning-block">
             <div class="warning-title">
                 <span>⚠️</span> Почему антивирус может ругаться?
@@ -237,7 +248,6 @@
             </div>
         </div>
 
-        <!-- Кнопки действий -->
         <div class="button-group">
             <button class="btn btn-primary" onclick="downloadFile()">
                 ⬇️ Скачать Anticheat Detect
@@ -247,45 +257,56 @@
             </button>
         </div>
         
-        <!-- Здесь будет появляться сообщение о загрузке -->
         <div id="downloadMessage" class="download-message"></div>
 
-        <!-- Нижняя часть -->
         <div class="footer-note">
             © 2026 Anticheat Detect · Честная игра начинается здесь
         </div>
     </div>
 
-    <!-- СКРИПТ С КНОПКОЙ СКАЧИВАНИЯ (НАЗВАНИЕ ФАЙЛА УЖЕ ИСПРАВЛЕНО) -->
+    <!-- ПОДКЛЮЧЕНИЕ БИБЛИОТЕКИ ДЛЯ ПАРТИКЛОВ -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- НАСТРОЙКА ПАРТИКЛОВ -->
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 100, density: { enable: true, value_area: 800 } },
+                color: { value: '#4a90e2' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.6, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#4a90e2', opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 1.5, direction: 'none', random: true }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: true, mode: 'push' }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
     <script>
         function downloadFile() {
-            // Имя твоего файла - уже исправлено на anticheatdetekt.exe
             var fileName = 'anticheatdetekt.exe';
-            
-            // Создаем ссылку для скачивания
             var link = document.createElement('a');
             link.href = fileName;
             link.download = fileName;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
-            // Показываем сообщение об успехе
-            document.getElementById('downloadMessage').innerHTML = '✅ Скачивание началось! Спасибо за выбор Anticheat Detect.';
-            
-            // Сообщение исчезнет через 5 секунд
-            setTimeout(function() {
-                document.getElementById('downloadMessage').innerHTML = '';
+            document.getElementById('downloadMessage').innerHTML = '✅ Скачивание началось!';
+            setTimeout(function() { 
+                document.getElementById('downloadMessage').innerHTML = ''; 
             }, 5000);
         }
 
         function showInfo() {
-            alert('Anticheat Detect — полностью бесплатный античит.\n\n' +
-                  'Версия: 2.1.4\n' +
-                  'Дата выпуска: 14.02.2026\n' +
-                  'Размер: ~15 MB\n' +
-                  'Поддержка: Windows 10/11\n\n' +
-                  'Программа не содержит вредоносного кода и не передаёт личные данные.');
+            alert('Anticheat Detect — полностью бесплатный античит.\n\nВерсия: 2.1.4\nДата выпуска: 14.02.2026\nРазмер: ~8 MB\nПоддержка: Windows 10/11');
         }
     </script>
 </body>
