@@ -66,3 +66,11 @@ button:hover {
     color: #cfcfcf;
     line-height: 1.6;
 }
+
+.divider {
+    height: 1px;
+    width: 80%;
+    margin: 35px auto;
+    background: linear-gradient(to right, transparent, #38bdf8, transparent);
+    opacity: 0.6;
+}
