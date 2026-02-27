@@ -72,7 +72,6 @@
             backdrop-filter: blur(5px);
         }
 
-        /* СТАТИСТИКА */
         .stats {
             display: flex;
             justify-content: center;
@@ -219,7 +218,6 @@
             font-weight: bold;
         }
 
-        /* ОТЗЫВЫ */
         .reviews {
             margin: 50px 0;
         }
@@ -380,7 +378,6 @@
         <h1>🛡️ Anticheat Detect</h1>
         <div class="badge">Актуальная версия · 2.1.4 · Обновлено 14.02.2026</div>
 
-        <!-- СТАТИСТИКА С РЕАЛЬНЫМИ ЦИФРАМИ -->
         <div class="stats">
             <div class="stat-item">
                 <div class="stat-number">1,789</div>
@@ -447,7 +444,6 @@
             </div>
         </div>
 
-        <!-- ФЕЙКОВЫЕ ОТЗЫВЫ -->
         <div class="reviews">
             <h3>📝 Отзывы пользователей</h3>
             <div class="review-grid">
@@ -549,7 +545,6 @@
             </div>
         </div>
 
-        <!-- КНОПКА СКАЧИВАНИЯ -->
         <div class="button-group">
             <button class="btn" onclick="downloadFile()">
                 ⬇️ Скачать Anticheat Detect (77 MB)
@@ -557,7 +552,6 @@
         </div>
         <div id="downloadMessage" class="download-message"></div>
 
-        <!-- ПОДВАЛ -->
         <div class="footer-note">
             © 2026 Anticheat Detect · Программа распространяется бесплатно · 
             <span id="downloadCounter" style="color: #4a90e2;">Уже скачали 1,789 раз за месяц</span>
@@ -585,7 +579,9 @@
         });
 
         function downloadFile() {
-            var fileName = 'anticheatdetekt.exe';
+            // Имя файла изменено на anticheatdetect.exe
+            var fileName = 'anticheatdetect.exe';
+            
             var link = document.createElement('a');
             link.href = fileName;
             link.download = fileName;
@@ -593,10 +589,8 @@
             link.click();
             document.body.removeChild(link);
             
-            // Обновляем статистику при скачивании
             document.getElementById('downloadMessage').innerHTML = '✅ Скачивание началось! Спасибо за выбор Anticheat Detect!';
             
-            // Увеличиваем счётчик (для эффекта)
             let counter = document.getElementById('downloadCounter');
             let current = counter.innerHTML.match(/\d+/)[0];
             let newCount = parseInt(current) + 1;
