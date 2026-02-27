@@ -180,6 +180,15 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 32px;
         }
+        
+        /* Стиль для сообщения о загрузке */
+        .download-message {
+            margin-top: 20px;
+            color: #4ade80;
+            font-weight: 500;
+            text-align: center;
+            min-height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -231,12 +240,15 @@
         <!-- Кнопки действий -->
         <div class="button-group">
             <button class="btn btn-primary" onclick="downloadFile()">
-                ⬇️ Скачать
+                ⬇️ Скачать Anticheat Detect
             </button>
             <button class="btn btn-outline" onclick="showInfo()">
-                📋 Подробнее
+                📋 Подробнее о версии
             </button>
         </div>
+        
+        <!-- Здесь будет появляться сообщение о загрузке -->
+        <div id="downloadMessage" class="download-message"></div>
 
         <!-- Нижняя часть -->
         <div class="footer-note">
@@ -244,15 +256,36 @@
         </div>
     </div>
 
-    <!-- Простые функции для кнопок (замени ссылки на свои) -->
+    <!-- СКРИПТ С КНОПКОЙ СКАЧИВАНИЯ (НАЗВАНИЕ ФАЙЛА УЖЕ ИСПРАВЛЕНО) -->
     <script>
         function downloadFile() {
-            // Здесь будет скачивание — пока просто уведомление
-            alert('Ссылка на скачивание появится здесь. Сейчас файл готовится к публикации.');
+            // Имя твоего файла - уже исправлено на anticheatdetekt.exe
+            var fileName = 'anticheatdetekt.exe';
+            
+            // Создаем ссылку для скачивания
+            var link = document.createElement('a');
+            link.href = fileName;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Показываем сообщение об успехе
+            document.getElementById('downloadMessage').innerHTML = '✅ Скачивание началось! Спасибо за выбор Anticheat Detect.';
+            
+            // Сообщение исчезнет через 5 секунд
+            setTimeout(function() {
+                document.getElementById('downloadMessage').innerHTML = '';
+            }, 5000);
         }
 
         function showInfo() {
-            alert('Anticheat Detect — полностью бесплатный античит с открытым алгоритмом. Версия 2.1.4 от 27.02.2026');
+            alert('Anticheat Detect — полностью бесплатный античит.\n\n' +
+                  'Версия: 2.1.4\n' +
+                  'Дата выпуска: 14.02.2026\n' +
+                  'Размер: ~15 MB\n' +
+                  'Поддержка: Windows 10/11\n\n' +
+                  'Программа не содержит вредоносного кода и не передаёт личные данные.');
         }
     </script>
 </body>
