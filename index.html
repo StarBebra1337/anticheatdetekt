@@ -1,100 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>Anticheat Detekt</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #1a1a2e;
-            color: white;
-            text-align: center;
-            padding: 50px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #16213e;
-            padding: 40px;
-            border-radius: 20px;
-        }
-        h1 {
-            color: #0f3460;
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .badge {
-            background: #e94560;
-            padding: 10px 30px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 40px 0;
-        }
-        .feature {
-            background: #0f3460;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .download-btn {
-            background: #e94560;
-            color: white;
-            padding: 20px 50px;
-            font-size: 24px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            margin: 30px 0;
-        }
-        .download-btn:hover {
-            background: #ff6b8b;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Anticheat Detect</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
-        <h1>??? Anticheat Detekt</h1>
-        <div class="badge">Версия 2.0.1</div>
+        <h1>?? Anticheat Detect</h1>
+        <p class="subtitle">Почему античит жалуется на приложение?</p>
+
+        <textarea id="appDescription" placeholder="Anticheat Detect — это программа, которая проверяет компьютер на наличие популярных читов и запрещённых игровых модификаций.
+
+Античит анализирует запущенные процессы, подозрительные файлы и программы, которые могут вмешиваться в работу игры. Если обнаруживается потенциально опасное ПО (например, инжекторы, макросы, оверлеи или программы для изменения памяти), система уведомляет пользователя или блокирует доступ к игре.
+
+Программа работает в фоновом режиме и помогает поддерживать честную и безопасную игровую среду."></textarea>
         
-        <p style="font-size: 20px; margin: 30px 0;">
-            Профессиональная защита от читов для вашего сервера
-        </p>
-        
-        <div class="features">
-            <div class="feature">
-                <h3>? Мгновенно</h3>
-                <p>Обнаружение за 0.1 секунды</p>
-            </div>
-            <div class="feature">
-                <h3>??? Надежно</h3>
-                <p>Блокировка 100% читов</p>
-            </div>
-            <div class="feature">
-                <h3>?? Подробно</h3>
-                <p>Полная статистика</p>
-            </div>
-        </div>
-        
-        <button class="download-btn" onclick="downloadFile()">
-            ?? Скачать
-        </button>
-        
-        <p id="info" style="color: #888; margin-top: 20px;">
-            Размер: 15 MB | Windows 10/11
-        </p>
+        <button onclick="checkApp()">Проверить</button>
+
+        <div id="result" class="result-box"></div>
     </div>
-    
-    <script>
-        function downloadFile() {
-            // Пока просто сообщение
-            document.getElementById('info').innerHTML = 'Скачивание началось!';
-            alert('Файл будет доступен позже');
-        }
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
