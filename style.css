@@ -58,3 +58,11 @@ button:hover {
     text-align: left;
     font-size: 14px;
 }
+
+
+.warning {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #cfcfcf;
+    line-height: 1.6;
+}
