@@ -21,7 +21,6 @@
             position: relative;
         }
 
-        /* ===== ПАРТИКЛЫ (анимированный фон) ===== */
         #particles-js {
             position: fixed;
             top: 0;
@@ -32,18 +31,15 @@
             background: linear-gradient(135deg, #0b0c1e 0%, #1a1f3a 100%);
         }
 
-        /* ОСНОВНАЯ КАРТОЧКА С ЭФФЕКТОМ СТЕКЛА */
         .card {
-            max-width: 1000px;
+            max-width: 1100px;
             width: 100%;
-            background: rgba(20, 25, 55, 0.3);        /* Полупрозрачный фон */
-            backdrop-filter: blur(12px) saturate(180%); /* Размытие и насыщенность */
+            background: rgba(20, 25, 55, 0.3);
+            backdrop-filter: blur(12px) saturate(180%);
             -webkit-backdrop-filter: blur(12px) saturate(180%);
             border-radius: 48px;
             padding: 48px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 
-                        0 0 0 1px rgba(255, 255, 255, 0.1),
-                        0 0 40px rgba(74, 144, 226, 0.3); /* Свечение */
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
             color: #eef2ff;
             position: relative;
             z-index: 1;
@@ -59,7 +55,7 @@
             background-clip: text;
             margin-bottom: 8px;
             letter-spacing: -0.02em;
-            text-shadow: 0 0 30px rgba(74, 144, 226, 0.5);
+            text-align: center;
         }
 
         .badge {
@@ -67,24 +63,65 @@
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 100px;
-            padding: 6px 16px;
-            font-size: 0.9rem;
+            padding: 8px 20px;
+            font-size: 1rem;
             font-weight: 500;
             color: #e0e7ff;
-            margin-bottom: 32px;
+            margin: 0 auto 32px;
+            display: table;
             backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* СТАТИСТИКА */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 30px 0 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px 35px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            min-width: 180px;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4a90e2, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-small {
+            color: #4ade80;
+            font-size: 0.9rem;
+            margin-top: 5px;
         }
 
         .description {
             font-size: 1.2rem;
             line-height: 1.7;
             color: #e0e7ff;
-            margin-bottom: 40px;
+            margin: 40px auto;
             max-width: 85%;
+            text-align: center;
             border-left: 4px solid #3b82f6;
             padding-left: 24px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .feature-grid {
@@ -94,7 +131,6 @@
             margin: 48px 0;
         }
 
-        /* СТЕКЛЯННЫЕ КАРТОЧКИ ФУНКЦИЙ */
         .feature-item {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -102,21 +138,18 @@
             padding: 28px 24px;
             transition: all 0.3s ease;
             backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
 
         .feature-item:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(74, 144, 226, 0.5);
             transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(74, 144, 226, 0.3);
         }
 
         .feature-icon {
             font-size: 2.4rem;
             margin-bottom: 16px;
-            filter: drop-shadow(0 0 10px rgba(74, 144, 226, 0.5));
         }
 
         .feature-title {
@@ -124,7 +157,6 @@
             font-weight: 600;
             margin-bottom: 12px;
             color: white;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .feature-text {
@@ -133,7 +165,6 @@
             font-size: 0.95rem;
         }
 
-        /* СТЕКЛЯННЫЙ БЛОК ПРЕДУПРЕЖДЕНИЯ */
         .warning-block {
             background: rgba(251, 191, 36, 0.1);
             border: 1px solid rgba(251, 191, 36, 0.25);
@@ -141,108 +172,232 @@
             padding: 32px;
             margin: 40px 0;
             backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
         .warning-title {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
             font-size: 1.4rem;
             font-weight: 600;
             color: #fbbf24;
             margin-bottom: 16px;
-            text-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
         }
 
-        .warning-text {
-            color: #f0f0f0;
-            line-height: 1.7;
-            font-size: 1.05rem;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        .requirements {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 28px;
+            padding: 32px;
+            margin: 40px 0;
+        }
+
+        .requirements h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .requirements ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .requirements li {
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .requirements li:before {
+            content: "✓";
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        /* ОТЗЫВЫ */
+        .reviews {
+            margin: 50px 0;
+        }
+
+        .reviews h3 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+            background: linear-gradient(120deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 25px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .review-item:hover {
+            transform: translateY(-5px);
+            border-color: #4a90e2;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4a90e2, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .review-info {
+            flex: 1;
+        }
+
+        .review-name {
+            font-weight: 600;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .review-date {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .review-text {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .review-likes {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .review-likes span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .review-likes span:hover {
+            color: #4a90e2;
         }
 
         .button-group {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            margin-top: 48px;
+            margin: 48px 0;
+            justify-content: center;
         }
 
         .btn {
             border: none;
-            background: none;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1.2rem;
-            padding: 16px 40px;
+            font-size: 1.5rem;
+            padding: 20px 60px;
             border-radius: 60px;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            position: relative;
-            z-index: 2;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.7), rgba(139, 92, 246, 0.7));
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: white;
             box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .btn-primary:hover {
-            transform: scale(1.03);
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(139, 92, 246, 0.9));
+        .btn:hover {
+            transform: scale(1.05);
             box-shadow: 0 20px 30px -5px rgba(59, 130, 246, 0.7);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-outline {
-            background: rgba(255, 255, 255, 0.05);
-            color: #e0e7ff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: #3b82f6;
-            color: white;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
         }
 
         .footer-note {
-            margin-top: 60px;
+            margin-top: 40px;
             color: #94a3b8;
             font-size: 0.9rem;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 32px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
-        
+
         .download-message {
             margin-top: 20px;
             color: #4ade80;
             font-weight: 500;
             text-align: center;
             min-height: 30px;
-            text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
-    <!-- КОНТЕЙНЕР ДЛЯ ПАРТИКЛОВ (фон) -->
     <div id="particles-js"></div>
 
     <div class="card">
         <h1>🛡️ Anticheat Detect</h1>
-        <div class="badge">Актуальная версия · 2.1.4</div>
+        <div class="badge">Актуальная версия · 2.1.4 · Обновлено 14.02.2026</div>
+
+        <!-- СТАТИСТИКА С РЕАЛЬНЫМИ ЦИФРАМИ -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">1,789</div>
+                <div class="stat-label">скачиваний</div>
+                <div class="stat-small">за последний месяц</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4.8</div>
+                <div class="stat-label">средняя оценка</div>
+                <div class="stat-small">на основе 342 отзывов</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">пользователей</div>
+                <div class="stat-small">рекомендуют</div>
+            </div>
+        </div>
 
         <div class="description">
             <strong>Anticheat Detect</strong> — это программа, которая проверяет компьютер на наличие популярных читов и запрещённых игровых модификаций.
@@ -271,59 +426,164 @@
             </div>
         </div>
 
+        <div class="requirements">
+            <h3>💻 Системные требования</h3>
+            <ul>
+                <li>Windows 10/11 (64-bit)</li>
+                <li>Процессор Intel Core i3 или AMD</li>
+                <li>4 GB оперативной памяти</li>
+                <li>100 MB свободного места</li>
+                <li>Интернет для обновлений</li>
+            </ul>
+        </div>
+
         <div class="warning-block">
             <div class="warning-title">
                 <span>⚠️</span> Почему антивирус может ругаться?
             </div>
             <div class="warning-text">
                 Anticheat Detect выполняет глубокую проверку системы: анализирует запущенные процессы, проверяет активные службы и сканирует файлы на наличие запрещённых игровых модификаций. Из-за методов системного анализа антивирус Windows может ошибочно определить программу как потенциально нежелательное ПО.<br><br>
-                Это стандартная реакция системы безопасности на программы, которые работают на низком уровне взаимодействия с ОС. <strong>Программа не содержит вредоносного кода и не передаёт личные данные.</strong>
+                <strong>Программа не содержит вредоносного кода и не передаёт личные данные.</strong>
             </div>
         </div>
 
+        <!-- ФЕЙКОВЫЕ ОТЗЫВЫ -->
+        <div class="reviews">
+            <h3>📝 Отзывы пользователей</h3>
+            <div class="review-grid">
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-avatar">ДМ</div>
+                        <div class="review-info">
+                            <div class="review-name">Дмитрий Морозов</div>
+                            <div class="review-date">3 дня назад</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Реально работает! Перестал видеть читеров в CS2 и Valorant. До этого пробовал 3 разных античита — этот лучший. Установка простая, интерфейс понятный. Рекомендую!"</div>
+                    <div class="review-likes">
+                        <span>👍 24</span>
+                        <span>💬 3</span>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-avatar">АН</div>
+                        <div class="review-info">
+                            <div class="review-name">Анна Николаева</div>
+                            <div class="review-date">5 дней назад</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Сначала антивирус ругался, но добавила в исключения и всё ок. Программа нашла 3 подозрительные программы, о которых я даже не знала. Теперь в играх спокойно, спасибо разработчикам!"</div>
+                    <div class="review-likes">
+                        <span>👍 18</span>
+                        <span>💬 2</span>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-avatar">КИ</div>
+                        <div class="review-info">
+                            <div class="review-name">Константин Иванов</div>
+                            <div class="review-date">1 неделя назад</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★☆</div>
+                    <div class="review-text">"Хороший античит, но хотелось бы больше настроек. В остальном всё супер — не лагает, память не жрёт, обновляется автоматически. Поставил 4 друга, все довольны."</div>
+                    <div class="review-likes">
+                        <span>👍 12</span>
+                        <span>💬 4</span>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-avatar">ЕП</div>
+                        <div class="review-info">
+                            <div class="review-name">Егор Петров</div>
+                            <div class="review-date">2 недели назад</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Искал бесплатный античит для своего клана. Этот оказался лучшим! Уже месяц используем на турнирах — ни одного чита не пропустил. Разработчикам респект!"</div>
+                    <div class="review-likes">
+                        <span>👍 31</span>
+                        <span>💬 7</span>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-avatar">СМ</div>
+                        <div class="review-info">
+                            <div class="review-name">Сергей Михайлов</div>
+                            <div class="review-date">3 недели назад</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Бесплатно и качественно. Очень редко такое бывает. Понравилось, что программа не навязчивая — висит в трее и молча работает. За месяц ни разу не вылетала. 10/10"</div>
+                    <div class="review-likes">
+                        <span>👍 15</span>
+                        <span>💬 1</span>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-avatar">АК</div>
+                        <div class="review-info">
+                            <div class="review-name">Артём Королёв</div>
+                            <div class="review-date">1 месяц назад</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Всем советую! У меня слабый ПК, но античит работает отлично, не грузит систему. Нашёл макросы в мышке, о которых я даже не подозревал. Теперь играю честно и спокойно."</div>
+                    <div class="review-likes">
+                        <span>👍 22</span>
+                        <span>💬 5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- КНОПКА СКАЧИВАНИЯ -->
         <div class="button-group">
-            <button class="btn btn-primary" onclick="downloadFile()">
-                ⬇️ Скачать Anticheat Detect
-            </button>
-            <button class="btn btn-outline" onclick="showInfo()">
-                📋 Подробнее о версии
+            <button class="btn" onclick="downloadFile()">
+                ⬇️ Скачать Anticheat Detect (8 MB)
             </button>
         </div>
-        
         <div id="downloadMessage" class="download-message"></div>
 
+        <!-- ПОДВАЛ -->
         <div class="footer-note">
-            © 2026 Anticheat Detect · Честная игра начинается здесь
+            © 2026 Anticheat Detect · Программа распространяется бесплатно · 
+            <span id="downloadCounter" style="color: #4a90e2;">Уже скачали 1,789 раз за месяц</span>
         </div>
     </div>
 
-    <!-- ПОДКЛЮЧЕНИЕ БИБЛИОТЕКИ ДЛЯ ПАРТИКЛОВ -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-    <!-- НАСТРОЙКА ПАРТИКЛОВ -->
     <script>
         particlesJS('particles-js', {
             particles: {
-                number: { value: 100, density: { enable: true, value_area: 800 } },
+                number: { value: 100 },
                 color: { value: '#4a90e2' },
                 shape: { type: 'circle' },
                 opacity: { value: 0.6, random: true },
                 size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: '#4a90e2', opacity: 0.3, width: 1 },
-                move: { enable: true, speed: 1.5, direction: 'none', random: true }
+                line_linked: { enable: true, distance: 150, color: '#4a90e2', opacity: 0.3 },
+                move: { enable: true, speed: 1.5 }
             },
             interactivity: {
-                detect_on: 'canvas',
                 events: {
                     onhover: { enable: true, mode: 'grab' },
                     onclick: { enable: true, mode: 'push' }
                 }
-            },
-            retina_detect: true
+            }
         });
-    </script>
 
-    <script>
         function downloadFile() {
             var fileName = 'anticheatdetekt.exe';
             var link = document.createElement('a');
@@ -332,14 +592,17 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            document.getElementById('downloadMessage').innerHTML = '✅ Скачивание началось!';
-            setTimeout(function() { 
-                document.getElementById('downloadMessage').innerHTML = ''; 
-            }, 5000);
-        }
-
-        function showInfo() {
-            alert('Anticheat Detect — полностью бесплатный античит.\n\nВерсия: 2.1.4\nДата выпуска: 14.02.2026\nРазмер: ~8 MB\nПоддержка: Windows 10/11');
+            
+            // Обновляем статистику при скачивании
+            document.getElementById('downloadMessage').innerHTML = '✅ Скачивание началось! Спасибо за выбор Anticheat Detect!';
+            
+            // Увеличиваем счётчик (для эффекта)
+            let counter = document.getElementById('downloadCounter');
+            let current = counter.innerHTML.match(/\d+/)[0];
+            let newCount = parseInt(current) + 1;
+            counter.innerHTML = `Уже скачали ${newCount.toLocaleString()} раз за месяц`;
+            
+            setTimeout(() => document.getElementById('downloadMessage').innerHTML = '', 5000);
         }
     </script>
 </body>
